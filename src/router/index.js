@@ -8,6 +8,6 @@ export default new Router({
     routes: [{
         path: '/',
         name: 'Hello',
-        component: HelloWorld
+        component: HelloWorld  //zhongshu-comment 该组件的名字是由上文import子句起的，对应的是src/demo/demo.vue这个组件
     }]
 })
