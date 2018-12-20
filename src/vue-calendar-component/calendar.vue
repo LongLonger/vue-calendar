@@ -132,18 +132,20 @@
     }
 
     .wh_content_item .wh_isToday {
-        background: yellow;
+        /*background: yellow;*/
+        background: green;
         border-radius: 100px;
     }
 
     .wh_content_item .wh_chose_day {
-        background: green;
+        background: chartreuse;
         border-radius: 100px;
     }
 </style>
 <template>
     <section class="wh_container">
         <div class="wh_content_all">
+
             <div class="wh_top_changge">
                 <li @click="PreMonth(myDate,false)">
                     <div class="wh_jiantou1"></div>
@@ -153,6 +155,7 @@
                     <div class="wh_jiantou2"></div>
                 </li>
             </div>
+
             <div class="wh_content">
                 <div class="wh_content_item" v-for="tag in textTop">
                     <div class="wh_top_tag">
@@ -160,6 +163,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="wh_content">
                 <div class="wh_content_item" v-for="(item,index) in list" @click="clickDay(item,index)">
                     <div class="wh_item_date"
@@ -184,7 +188,7 @@
                 dateTop: ''
             };
         },
-        props: {
+        props: { //zhongshu-comment 这是暴露给外界使用的属性，外界可以通过指定这些属性的值，这些值会传给该vue组件，达到改变该vue组件的目的
             markDate: {
                 type: Array,
                 default: () => []
@@ -196,6 +200,7 @@
             textTop: {
                 type: Array,
                 default: () => ['日', '一', '二', '三', '四', '五', '六']
+                // default: () => ['一', '二', '三', '四', '五', '六', '日']
             },
             sundayStart: {
                 type: Boolean,
